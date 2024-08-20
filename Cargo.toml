@@ -1,0 +1,31 @@
+[package]
+name = "stylus-strings-poc"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+keywords = ["arbitrum, ethereum", "stylus", "evm", "alloy"]
+description = "Playground for experiments with Strings in Stylus Smart Contracts."
+
+[dependencies]
+alloy-primitives = "0.7.6"
+alloy-sol-types = "0.7.6"
+mini-alloc = "0.4.2"
+stylus-sdk = "0.5.2"
+
+[features]
+export-abi = ["stylus-sdk/export-abi"]
+debug = ["stylus-sdk/debug"]
+
+[[bin]]
+name = "stylus-strings-poc"
+path = "src/main.rs"
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[profile.release]
+codegen-units = 1
+strip = true
+lto = true
+panic = "abort"
+opt-level = "s"
