@@ -38,4 +38,8 @@ impl StringPoC {
     pub fn pass(&self) -> String {
         self._data.get_string()
     }
+
+    pub fn easy(&self) -> u8 {
+        11
+    }
 }
