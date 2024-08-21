@@ -35,7 +35,8 @@ impl StringPoC {
         evm::log(DataSet { data });
         Ok(())
     }
-    pub fn pass(&self) -> String {
+
+    pub fn get(&self) -> String {
         self._data.get_string()
     }
 
