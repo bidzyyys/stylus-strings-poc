@@ -5,6 +5,7 @@ extern crate alloc;
 static ALLOC: mini_alloc::MiniAlloc = mini_alloc::MiniAlloc::INIT;
 
 use alloy_sol_types::sol;
+use stylus_sdk::abi::Bytes;
 use stylus_sdk::evm;
 use stylus_sdk::prelude::{entrypoint, external, sol_storage};
 
@@ -42,5 +43,9 @@ impl StringPoC {
 
     pub fn easy(&self) -> u8 {
         11
+    }
+
+    pub fn test(&self) -> Bytes {
+        vec![0, 1, 2, 3, 4, 5, 6].into()
     }
 }
